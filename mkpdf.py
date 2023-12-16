@@ -15,23 +15,19 @@ def create_pdf(save_loc: str, filename: str, text: str):
         os.makedirs(save_loc)
 
     last_dot_index = filename.rindex(".")
-
-    # f = open(os.path.join(save_loc, filename[:last_dot_index] + ".pdf"), "wb")
-    # f.write(output)
     pdf.output(os.path.join(save_loc, filename[:last_dot_index] + ".pdf"))
 
 
-def getFiles(root: str, path_list: list[str]):
+def get_pdfs(root: str, path_list: list[str], output: str):
     root = os.path.abspath(root)
     for item in path_list:
         rel_path = os.path.relpath(item, root)
-        txt = readFile(item)
+        txt = read_file(item)
         file_name = os.path.basename(rel_path)
-        loc_path = os.path.join("output", os.path.dirname(rel_path))
-
+        loc_path = os.path.join(output, os.path.dirname(rel_path))
         create_pdf(loc_path, file_name, txt)
 
 
-def readFile(filename: str):
+def read_file(filename: str):
     with open(filename, "r") as f:
         return f.read()
