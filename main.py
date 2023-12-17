@@ -8,7 +8,8 @@ from list_gen import generate_files_list
 parser = argparse.ArgumentParser()
 parser.add_argument("root_folder", type=str, help="Name of the root folder that contains the file to convert")
 parser.add_argument("-i", "--include", nargs="*", type=str,
-                    help="File extensions to include when creating PDFs", default=["java", "c"])
+                    help="File extensions to include when creating PDFs",
+                    default=["txt", "py", "java", "c", "cpp", "html", "js"])
 parser.add_argument("-o", "--output", type=str, help="Path to place the output file", default="output")
 args = parser.parse_args()
 
