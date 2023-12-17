@@ -1,9 +1,10 @@
 import os
 import sys
 import argparse
-from mkpdf import get_pdfs
 from list_gen import generate_files_list
 import html
+
+
 # CLI Arguments
 parser = argparse.ArgumentParser()
 parser.add_argument("root_folder", type=str, help="Name of the root folder that contains the file to convert")
