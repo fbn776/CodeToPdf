@@ -23,6 +23,9 @@ def generate_files_list(root: str, include_exts: list[str]):
                 append_file_path(sub_item, path_list, include_exts)
             # Get out of the folder
             os.chdir("../")
+        else:
+            append_file_path(item, path_list, include_exts)
+
     os.chdir("../")
 
     return path_list
@@ -30,7 +33,10 @@ def generate_files_list(root: str, include_exts: list[str]):
 
 def append_file_path(sub: str, path_list: list[str], include_exts: list[str]):
     """
-    This is the recursive function that goes through each file and appends the absolute path
+    This is the recursive function that goes through each file and appends the absolute path to the given path_list ref
+    :param sub: Current subdirectory or file
+    :param path_list: The reference of path list array, paths are appended to this array
+    :param include_exts: File extensions to include
     """
     if os.path.isdir(sub):
         os.chdir(sub)

@@ -82,3 +82,12 @@ LabPdfs/
 │  ├─ ex4.pdf
 ```
 
+## Testing
+
+For testing a sample; use
+
+```bash
+python main.py testInput -o testOutput
+```
+
+Converts files in `testInput` to `testOuput`
