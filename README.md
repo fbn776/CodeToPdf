@@ -87,7 +87,7 @@ LabPdfs/
 For testing a sample; use
 
 ```bash
-python main.py testInput -o testOutput
+python main.py test_input -o test_output
 ```
 
-Converts files in `testInput` to `testOuput`
+Converts files in `test_input` to `test_ouput`
